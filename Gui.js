@@ -171,7 +171,7 @@ details summary ~ * {
                 update();
             },
             'Give Knife/Gun': () => {
-                let box = prompt(`Enter name of the knife/gun you want:`);
+                let box = prompt(`Enter name of the knife/gun you want (⚠️Wrong name will mess up your account!⚠️):`);
                 userdata.inv.push({"name":box,"stattrak":true,"t":"fn"})
             }
         }

@@ -88,8 +88,9 @@ details summary ~ * {
     header.style.height = '35px';
     header.style.paddingTop = '2px';
     header.style.fontSize = '1.5rem';
-    header.style.textAlign = 'center'
-    header.innerHTML = `Csgo Clicker Cheats <span style="font-size: 0.75rem">Beta v1.0</span>`;
+    header.style.textAlign = 'center';
+    header.style.fontWeight = '550';
+    header.innerHTML = `Csgo Clicker Cheats <span style="font-size: 0.75rem; font-weight: 400">Beta v1.0</span>`;
 
     let loop;
 
@@ -141,13 +142,6 @@ details summary ~ * {
     bodyDiv.appendChild(body);
     GUI.appendChild(bodyDiv);
 
-    /*body.innerHTML = (`<br><span>(Press E to hide)</span><br>`);
-    body.style.display = 'block';
-    body.style.margin = '1px';
-    body.style.background = 'hsl(0, 0%, 10%)';
-    body.style.minHeight = '70px';
-    body.style.fontSize = '0.5rem';*/
-
     let activeCheats = document.createElement('span');
     body.appendChild(activeCheats);
 
@@ -178,13 +172,14 @@ details summary ~ * {
     }
 
     let global = document.createElement('details');
-    global.innerHTML = (`<summary style="padding: 10px; font-size: 1.5em; font-weight: bolder">Global</summary>`);
+    global.innerHTML = (`<summary style="padding: 10px; font-size: 1.0em">(Press E to hide)</summary>`);
     for (var i = 0; i < Object.keys(cheats.global).length; i++) {
         let cheat = createButton(Object.keys(cheats.global)[i]);
         cheat.onclick = cheats.global[Object.keys(cheats.global)[i]];
         global.appendChild(cheat);
     }
     global.open = true;
+    global.style.paddingTop = '0px'
     global.style.paddingBottom = '10px';
     body.appendChild(global);
 

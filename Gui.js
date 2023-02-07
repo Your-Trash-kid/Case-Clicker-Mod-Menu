@@ -166,7 +166,7 @@ details summary ~ * {
         global: {
             'Give Money': () => {
                 let box = prompt(`Enter amount of cash you want:`);
-                userdata.money = userdata.money + box
+                userdata.money = userdata.money + parseFloat(box);
             },
             'Give Knife/Gun': () => {
                 let box = prompt(`Enter name of the knife/gun you want:`);

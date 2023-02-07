@@ -96,19 +96,19 @@ details summary ~ * {
     let close = document.createElement('button');
     header.appendChild(close);
     close.style.background = 'red';
-    close.style.height = '45px';
-    close.style.width = '45px';
+    close.style.height = '35px';
+    close.style.width = '35px';
     close.style.border = 'none';
     close.style.cursor = 'pointer';
     close.style.position = 'absolute';
     close.style.top = '-10px';
     close.style.right = '-10px';
-    close.style.fontSize = '1.5rem';
-    close.style.borderRadius = '10px';
+    close.style.fontSize = '1.25rem';
+    close.style.borderRadius = '20px';
     //close.style.fontFamily = 'Nunito';
     close.style.fontWeight = 'bolder';
-    close.style.paddingTop = '10px';
-    close.style.paddingRight = '15px';
+    close.style.paddingTop = '5px';
+    close.style.paddingRight = '10px';
     close.innerText = 'X';
     close.onclick = () => {
         GUI.remove();
@@ -119,19 +119,19 @@ details summary ~ * {
     let minimize = document.createElement('button');
     header.appendChild(minimize);
     minimize.style.background = '#444444';
-    minimize.style.height = '45px';
-    minimize.style.width = '45px';
+    minimize.style.height = '35px';
+    minimize.style.width = '35px';
     minimize.style.border = 'none';
     minimize.style.cursor = 'pointer';
     minimize.style.position = 'absolute';
     minimize.style.top = '-10px';
     minimize.style.left = '-10px';
     minimize.style.fontSize = '1.5rem';
-    minimize.style.borderRadius = '10px';
+    minimize.style.borderRadius = '20px';
     //minimize.style.fontFamily = 'Nunito';
     minimize.style.fontWeight = 'bolder';
-    minimize.style.paddingTop = '10px';
-    minimize.style.paddingLeft = '15px';
+    minimize.style.paddingTop = '5px';
+    minimize.style.paddingLeft = '10px';
     minimize.innerText = '-';
     minimize.onclick = () => {
         bodyDiv.hidden = !bodyDiv.hidden;
@@ -143,9 +143,10 @@ details summary ~ * {
 
     /*body.innerHTML = (`<br><span>(Press E to hide)</span><br>`);
     body.style.display = 'block';
-    body.style.margin = '10px';
-    body.style.background = 'white';
-    body.style.minHeight = '70px';*/
+    body.style.margin = '1px';
+    body.style.background = 'hsl(0, 0%, 10%)';
+    body.style.minHeight = '70px';
+    body.style.fontSize = '0.5rem';*/
 
     let activeCheats = document.createElement('span');
     body.appendChild(activeCheats);
@@ -171,7 +172,7 @@ details summary ~ * {
             },
             'Give Knife/Gun': () => {
                 let box = prompt(`Enter name of the knife/gun you want:`);
-                userdata.inv.push({"name":$box,"stattrak":true,"t":"fn"})
+                userdata.inv.push({"name":box,"stattrak":true,"t":"fn"})
             }
         }
     }

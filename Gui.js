@@ -1,6 +1,8 @@
 // userdata.inv.push({"name":"Karambit | Gamma Doppler","stattrak":true,"t":"fn"})
 // userdata.money = userdata.money + 99999999
 
+var userdata = JSON.parse(localStorage[localStorage['uid'] + '-storage']);
+
 (() => {
     let n = document.createElement('iframe');
     document.body.append(n);
@@ -160,14 +162,12 @@ details summary ~ * {
         return Object.values(document.querySelector('#app > div > div'))[1].children[1]._owner;
     }
 
-    var userdata = JSON.parse(localStorage[localStorage['uid'] + '-storage']);
-
     let cheats = {
         global: {
             'Give Money': () => {
                 let box = prompt(`Enter amount of cash you want:`);
                 userdata.money = userdata.money + parseFloat(box);
-                localStorage.setItem(localStorage['uid'] + '-storage', JSON.stringify(userdata));
+                update();
             },
             'Give Knife/Gun': () => {
                 let box = prompt(`Enter name of the knife/gun you want:`);

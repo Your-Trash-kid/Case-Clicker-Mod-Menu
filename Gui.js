@@ -167,10 +167,11 @@ details summary ~ * {
             'Give Money': () => {
                 let box = prompt(`Enter amount of cash you want:`);
                 userdata.money = userdata.money + parseFloat(box);
+                localStorage.setItem(localStorage['uid'] + '-storage', JSON.stringify(userdata));
             },
             'Give Knife/Gun': () => {
                 let box = prompt(`Enter name of the knife/gun you want:`);
-                userdata.inv.push({"name":box,"stattrak":true,"t":"fn"})
+                userdata.inv.push({"name":$box,"stattrak":true,"t":"fn"})
             }
         }
     }

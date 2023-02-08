@@ -166,7 +166,10 @@ details summary ~ * {
             },
             'Give Knife/Gun': () => {
                 let box = prompt(`Enter name of the knife/gun you want (⚠️Wrong name will mess up your account!⚠️):`);
-                userdata.inv.push({"name":box,"stattrak":true,"t":"fn"})
+                let amount = prompt(`Enter the amount of the item you want:`);
+                for (let i = 0; i < amount; i++) {
+                    userdata.inv.push({"name":box,"stattrak":true,"t":"fn"})
+                }
             }
         }
     }

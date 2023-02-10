@@ -20,7 +20,7 @@ From https://mtsl.dk/csgo/, use the following:
 * **Mac**: `Command + Option + i` (To Enable: `Preferences -> Advanced tab -> Show Develop menu`)
 
 ## (Step Two) Copy Code:
-Head over to the [Gui.js](https://github.com/Your-Trash-kid/CaseClickerHacks/blob/main/Gui.js) file in the github and copy the code.
+Head over to the [Gui.js](https://github.com/Your-Trash-kid/Case-Clicker-Mod-Menu/blob/main/Gui.js) file in the github and copy the code.
 
 ## (Step Three) Opening The Right Sidebar Tab:
 Go back to https://mtsl.dk/csgo/ and in your inspect element side bar you just opened on **Step One** go to the section **Console** at the top.

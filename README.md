@@ -1,5 +1,5 @@
-### Case Clicker Mod Menu
-# Made by Your-Trash-Kid
+# Case Clicker Mod Menu
+### Made by Your-Trash-Kid
 
 <img src="https://mtsl.dk/csgo/images/CSGOWeaponCase3.png" width="128">
 
@@ -12,9 +12,12 @@ This mod menu will try to be updated daily and updated to work with new versions
 
 # (Step One) Open Console: 
 From https://mtsl.dk/csgo/, use the following:
-**Windows:** `Ctrl + Shift + i`
-**Chromebook/Chrome:** `Ctrl + Shift + i`
-**Mac**: `Command + Option + i` (To Enable: `Preferences -> Advanced tab -> Show Develop menu`)
+
+* **Windows:** `Ctrl + Shift + i`
+
+* **Chromebook/Chrome:** `Ctrl + Shift + i`
+
+* **Mac**: `Command + Option + i` (To Enable: `Preferences -> Advanced tab -> Show Develop menu`)
 
 # (Step Two) Copy Code:
 Head over to the [Gui.js](https://github.com/Your-Trash-kid/CaseClickerHacks/blob/main/Gui.js) file in the github and copy the code.
@@ -24,9 +27,12 @@ Go back to https://mtsl.dk/csgo/ and in your inspect element side bar you just o
 
 # (Step Four) Pasting The Code:
 In your inspect element sidebar use the following to paste the code and press `Enter`:
-**Windows:** `Ctrl + V`
-**Chromebook/Chrome:** `Ctrl + V`
-**Mac:** `Command + V`
+
+* **Windows:** `Ctrl + V`
+
+* **Chromebook/Chrome:** `Ctrl + V`
+
+* **Mac:** `Command + V`
 
 # (Step Five) Enjoy:
 You have now successfully injected our case clicker mod menu, make sure to share with a friend and star this github repository to get it to more people, Remember you can press `E` to hide the menu if it gets in your way!

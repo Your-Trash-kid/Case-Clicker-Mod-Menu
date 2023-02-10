@@ -1,4 +1,4 @@
-    // userdata.inv.push({"name":"Karambit | Gamma Doppler","stattrak":true,"t":"fn"})
+ // userdata.inv.push({"name":"Karambit | Gamma Doppler","stattrak":true,"t":"fn"})
     // userdata.money = userdata.money + 99999999
 
     var userdata = JSON.parse(localStorage[localStorage['uid'] + '-storage']);
@@ -90,7 +90,7 @@
         header.style.fontSize = '1.5rem';
         header.style.textAlign = 'center';
         header.style.fontWeight = '550';
-        header.innerHTML = `Csgo Clicker Cheats <span style="font-size: 0.75rem; font-weight: 400">Beta v1.1</span>`;
+        header.innerHTML = `Csgo Clicker Cheats <span style="font-size: 0.75rem; font-weight: 400">Beta v1.2</span>`;
 
         let loop;
 
@@ -180,8 +180,9 @@
                         update()
                     }
                 },
-                Clear Data': () => {
-                    let box = prompt(`How fast? (millseconds)`);
+                'AutoClicker': () => {
+                    let box = prompt(`How fast? (millseconds)`)
+
                     function clickCookie() {
                         var a = Math.random() * (1 + userdata.upgrades['+CASH'].amount);
                         userdata.money = userdata.money + a;

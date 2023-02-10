@@ -179,6 +179,25 @@
                         userdata = {"inv":[{"name":"Spectrum Case","stattrak":false,"t":"u"}],"money":2.4,"roulette":0,"upgrades":{"Bank":{"amount":0},"Offline Production":{"amount":0},"+CASH":{"amount":0},"Luck":{"amount":0},"Online Production":{"amount":0}},"moneyarray":[2.4]}
                         update()
                     }
+                },
+                Clear Data': () => {
+                    let box = prompt(`How fast? (millseconds)`);
+                    function clickCookie() {
+                        var a = Math.random() * (1 + userdata.upgrades['+CASH'].amount);
+                        userdata.money = userdata.money + a;
+                        update();
+                        var div = document.createElement('div');
+                        div.innerHTML = '+ ' + a.toFixed(2) + '€';
+                        div.className = 'fadeup';
+                        setTimeout(function() {
+                        div.parentNode.removeChild(div);
+                        }, 1000);
+                        $('#overlay').appendChild(div);
+                        div.style.left = 500 - div.offsetWidth / 2 + (Math.random() - 0.5) * 10 + 'px';
+                        div.style.top = 500 - 20 + (Math.random() - 0.5) * 10 + 'px';
+                    }
+                        
+                    setInterval(clickCookie, box)
                 }
             }
         }

@@ -60,6 +60,7 @@ details summary ~ * {
     GUI.style.overflow = 'hidden';
     GUI.style.top = '50px';
     GUI.style.left = '50px';
+    GUI.style.zIndex = "999";
 
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
     GUI.onmousedown = ((e = window.event) => {
@@ -90,7 +91,7 @@ details summary ~ * {
     header.style.fontSize = '1.5rem';
     header.style.textAlign = 'center';
     header.style.fontWeight = '550';
-    header.innerHTML = `Csgo Clicker Cheats <span style="font-size: 0.75rem; font-weight: 400">Beta v1.2</span>`;
+    header.innerHTML = `Csgo Clicker Cheats <span style="font-size: 0.75rem; font-weight: 400">Beta v1.2.5</span>`;
 
     let loop;
 
@@ -157,6 +158,9 @@ details summary ~ * {
         return Object.values(document.querySelector('#app > div > div'))[1].children[1]._owner;
     }
 
+    let clicking = "!Running";
+    let clickInterval;
+
     let cheats = {
         global: {
             'Give Money': () => {
@@ -164,12 +168,31 @@ details summary ~ * {
                 userdata.money = userdata.money + parseFloat(box);
                 update();
             },
-            'Give Knife/Gun': () => {
-                let box = prompt(`Enter name of the knife/gun you want (⚠️Wrong name will mess up your account!⚠️):`);
+            'Give Item': () => {
+                let box = prompt(`Enter name of the Item you want (Gun, Knife, Key, Case):`);
                 let amount = prompt(`Enter the amount of the item you want:`);
-                for (let i = 0; i < amount; i++) {
-                    userdata.inv.push({"name":box,"stattrak":true,"t":"fn"})
+                async function checkGithubFile(Item, Amount) {
+                    const response = await fetch('https://raw.githubusercontent.com/Your-Trash-kid/Case-Clicker-Mod-Menu/main/ItemList.txt');
+                    const contents = await response.text();
+                    const lines = contents.split('\n');
+                    let found = false;
+                  
+                    for (const line of lines) {
+                        if (line === Item) {
+                            for (let i = 0; i < Amount; i++) {
+                                userdata.inv.push({"name":Item,"stattrak":true,"t":"fn"})
+                            }
+                            found = true;
+                            break;
+                        }
+                    }
+                  
+                    if (!found) {
+                        confirm("Error: Wrong item name, check the github repository for items names shown in ItemList.txt.");
+                    }
                 }
+                checkGithubFile(box, amount);
+                
             },
             'Clear Data': () => {
                 let box = prompt(`Type "Yes" to confirm your request to clear your data`);
@@ -180,26 +203,42 @@ details summary ~ * {
                     update()
                 }
             },
-            'AutoClicker': () => {
-                let box = prompt(`How fast? (millseconds)`)
-
-                function clickCookie() {
-                    var a = Math.random() * (1 + userdata.upgrades['+CASH'].amount);
-                    userdata.money = userdata.money + a;
-                    update();
-                    var div = document.createElement('div');
-                    div.innerHTML = '+ ' + a.toFixed(2) + '€';
-                    div.className = 'fadeup';
-                    setTimeout(function() {
-                    div.parentNode.removeChild(div);
-                    }, 1000);
-                    $('#overlay').appendChild(div);
-                    div.style.left = 500 - div.offsetWidth / 2 + (Math.random() - 0.5) * 10 + 'px';
-                    div.style.top = 500 - 20 + (Math.random() - 0.5) * 10 + 'px';
+            'Auto Clicker': () => {
+                if (clicking === "!Running") {
+                    clicking = "Running";
+                    const buttons = document.querySelectorAll('.cheat');
+                    let box = prompt(`How fast? (millseconds)`)
+                
+                    function clickCookie() {
+                        var a = Math.random() * (1 + userdata.upgrades['+CASH'].amount);
+                        userdata.money = userdata.money + a;
+                        update();
+                        var div = document.createElement('div');
+                        div.innerHTML = '+ ' + a.toFixed(2) + '€';
+                        div.className = 'fadeup';               
+                        div.style.zIndex = "998";
+                        setTimeout(function() {
+                            div.parentNode.removeChild(div);
+                        }, 1000);
+                        $('#overlay').appendChild(div);
+                        const screenWidth = window.innerWidth;
+                        const screenHeight = window.innerHeight;
+                        
+                        div.style.left = (screenWidth / 2 - div.offsetWidth / 2) + 170 - div.offsetWidth / 2 + (Math.random() - 0.5) * 10 + 'px';
+                        div.style.top = (screenHeight / 2 - div.offsetHeight / 2) + 20 - 20 + (Math.random() - 0.5) * 10 + 'px';
+                        
+                    }
+                
+                    clickInterval = setInterval(clickCookie, box);
+                
+                    buttons[3].innerText = "Stop Auto Clicker";
+                } else {
+                    clearInterval(clickInterval);
+                    clicking = "!Running";
+                    const buttons = document.querySelectorAll('.cheat');
+                    buttons[3].innerText = "Auto Clicker";
                 }
-                    
-                setInterval(clickCookie, box)
-            }
+            }                             
         }
     }
 

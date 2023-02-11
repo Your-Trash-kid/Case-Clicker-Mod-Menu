@@ -44,5 +44,5 @@ Any copy's please credit!
 
 Any [Donations](https://www.paypal.com/paypalme/sealshopper?country.x=GB&locale.x=en_GB) appreatiated!
 
-<img src="img/ModMenu.png" width="640">
+<img src="img/ModMenu.png" width="512">
 

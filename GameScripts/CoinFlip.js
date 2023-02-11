@@ -224,8 +224,11 @@ function flipCoin() {
 
 	var win_lose_msg = ''
 
-	var r = 1
-    console.log(r)
+	if (player = "ct") {
+        r = "1"
+    } else {
+        r = "2"
+    }
 	if (r == 1) {
 		$('#coins').className = 'flipToCT';
 		landed = 'ct';

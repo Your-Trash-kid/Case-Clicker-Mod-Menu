@@ -1,7 +1,7 @@
 # Case Clicker Mod Menu
 ### Made by Your-Trash-Kid
 
-<img src="https://mtsl.dk/csgo/images/CSGOWeaponCase3.png" width="128">
+<img src="img/CSGOWeaponCase3.png" width="128">
 
 The game can be found at https://mtsl.dk/csgo/
 
@@ -36,6 +36,8 @@ In your inspect element sidebar use the following to paste the code and press `E
 
 ## (Step Five) Enjoy:
 You have now successfully injected our case clicker mod menu, make sure to share with a friend and star this github repository to get it to more people, Remember you can press `E` to hide the menu if it gets in your way!
+
+<img src="img/ModMenu.png" width="128">
 
 If you happen to update, please make a pull request for others to benefit, thanks!
 Any copy's please credit!

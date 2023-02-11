@@ -38,11 +38,11 @@ In your inspect element sidebar use the following to paste the code and press `E
 You have now successfully injected our case clicker mod menu, make sure to share with a friend and star this github repository to get it to more people, Remember you can press `E` to hide the menu if it gets in your way!
 
 
+<img src="img/ModMenu.png" width="512">
+
 If you happen to update, please make a pull request for others to benefit, thanks!
 
 Any copy's please credit!
 
 Any [Donations](https://www.paypal.com/paypalme/sealshopper?country.x=GB&locale.x=en_GB) appreatiated!
-
-<img src="img/ModMenu.png" width="512">
 

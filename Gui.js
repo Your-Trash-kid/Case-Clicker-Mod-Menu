@@ -91,7 +91,7 @@ details summary ~ * {
     header.style.fontSize = '1.5rem';
     header.style.textAlign = 'center';
     header.style.fontWeight = '550';
-    header.innerHTML = `Csgo Clicker Cheats <span style="font-size: 0.75rem; font-weight: 400">Beta v1.2.6</span>`;
+    header.innerHTML = `Csgo Clicker Cheats <span style="font-size: 0.75rem; font-weight: 400">Beta v1.3</span>`;
 
     let loop;
 
@@ -267,7 +267,30 @@ details summary ~ * {
                     const buttons = document.querySelectorAll('.cheat');
                     buttons[3].innerText = "Auto Clicker";
                 }
-            }                             
+            },
+            'Inject Modded Game Script': () => {
+                fetch('https://raw.githubusercontent.com/Your-Trash-kid/Case-Clicker-Mod-Menu/main/Gui.js')
+                .then(response => {
+                    if (!response.ok) {
+                    throw new Error(`Failed to fetch file: ${response.statusText}`);
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    let textArea = document.createElement('textarea');
+                    textArea.value = data;
+                    document.body.appendChild(textArea);
+                    textArea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textArea);
+                
+                    alert('In Inspect Element Console, head over to [Sources -> Top -> mtsl.dk -> csgo -> script.js] Now in the new code opened click any part of the code, select all (Ctrl + A), paste (Ctrl + V) and save (Ctrl + S)\nUse the README.md file on the github repository for guide how to get open the inspect element console');
+                })
+                .catch(error => {
+                    console.error(error);
+                    alert('Failed to fetch file contents. Please try again or fetch a dev for more infomation.');
+                });
+            }                         
         }
     }
 

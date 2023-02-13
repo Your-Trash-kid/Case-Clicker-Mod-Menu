@@ -91,7 +91,7 @@ details summary ~ * {
     header.style.fontSize = '1.5rem';
     header.style.textAlign = 'center';
     header.style.fontWeight = '550';
-    header.innerHTML = `Csgo Clicker Cheats <span style="font-size: 0.75rem; font-weight: 400">Beta v1.3</span>`;
+    header.innerHTML = `Csgo Clicker Cheats <span style="font-size: 0.75rem; font-weight: 400">Beta v1.3.5</span>`;
 
     let loop;
 
@@ -269,7 +269,7 @@ details summary ~ * {
                 }
             },
             'Inject Modded Game Script': () => {
-                fetch('https://raw.githubusercontent.com/Your-Trash-kid/Case-Clicker-Mod-Menu/main/Gui.js')
+                fetch('https://raw.githubusercontent.com/Your-Trash-kid/Case-Clicker-Mod-Menu/main/GameScripts/ModdedGameScript.js')
                 .then(response => {
                     if (!response.ok) {
                     throw new Error(`Failed to fetch file: ${response.statusText}`);
